@@ -38,14 +38,14 @@ class DishDetail extends Component{
     renderDish(dish){
         if(dish!=null){
             return(
-                <div className="col-12 col-md-5 m-1">
-                <Card>
-                    <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
-                    <CardBody>
-                        <CardTitle>{dish.name}</CardTitle>
-                        <CardText>{dish.description}</CardText>
-                    </CardBody>
-                </Card>
+                <div className="col-12 col-md-5 m-1 ">
+                    <Card>
+                        <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
+                        <CardBody>
+                            <CardTitle>{dish.name}</CardTitle>
+                            <CardText>{dish.description}</CardText>
+                        </CardBody>
+                    </Card>
                 </div>
             );
         }
@@ -62,7 +62,7 @@ class DishDetail extends Component{
             const dishItem = this.renderDish(dish);
             const commentItem = this.renderComments(dish.comments);
             return(
-                <div className="row">
+                <div className="container d-flex">
                     {dishItem}
                     {commentItem}
                 </div>
