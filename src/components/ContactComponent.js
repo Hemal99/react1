@@ -94,6 +94,7 @@ class Contact extends Component {
 
     render(){
         const errors = this.validate(this.state.firstname, this.state.lastname, this.state.telnum, this.state.email);
+        console.log(errors); //validate() kiyana eken return wenne objevt ekak
         return(
         <div className="container">
                  <div className="row">
@@ -150,7 +151,8 @@ class Contact extends Component {
                                         valid={errors.firstname === ''}
                                         invalid={errors.firstname !== ''}
                                         onBlur={this.handleBlur('firstname')}
-                                        onChange={this.handleInputChange} />
+                                        onChange={this.handleInputChange} 
+                                    />
                                     <FormFeedback>{errors.firstname}</FormFeedback>
                                 </Col>
                             </FormGroup>
