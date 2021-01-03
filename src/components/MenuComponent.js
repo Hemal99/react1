@@ -2,10 +2,10 @@ import React  from 'react';
 import {Card ,CardImg , CardImgOverlay, CardTitle ,BreadcrumbItem, Breadcrumb} from 'reactstrap';
 import {Link} from 'react-router-dom';
 
- function RenderMenuItem ({dish, onClick}) {
+ function RenderMenuItem ({dish}) {//props kiyanne javascript object ekak nisa curly braces use karnwa {dish,onClick} 
         return (
             <Card>
-                <Link to={`/menu/${dish.id}`} >
+                <Link to={`/menu/${dish.id}`} /*The primary way to allow users to navigate around your application. <Link> will render a fully accessible anchor tag with the proper href. */>
                     <CardImg width="100%" src={dish.image} alt={dish.name} />
                     <CardImgOverlay>
                         <CardTitle>{dish.name}</CardTitle>
@@ -40,10 +40,8 @@ import {Link} from 'react-router-dom';
                 </div>
                 <div className="row">
                         {menu}
-                </div>
-                
+                </div>          
             </div>
-
         );
     }
        

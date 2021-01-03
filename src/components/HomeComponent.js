@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle} from 'reactstrap';
 
-function RenderCard({item}) {
+function RenderCard({item}) {//parameter eke warahan danne eka javascript property ekak nisa ,prop ekak enne eka javascript object ekak
 
     return(
         <Card>
@@ -17,7 +17,8 @@ function RenderCard({item}) {
 
 }
 
-function Home(props) {
+function Home(props){
+    
     return(
         <div className="container">
             <div className="row align-items-start">

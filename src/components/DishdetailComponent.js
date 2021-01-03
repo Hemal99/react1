@@ -40,7 +40,7 @@ import { Link } from 'react-router-dom';
                     <Card>
                         <CardImg width="100%" src={dish.image} alt={dish.name}></CardImg>
                         <CardBody>
-                            <CardTitle>{dish.name}</CardTitle>
+                            <CardTitle className="btn btn-danger">{dish.name}</CardTitle>
                             <CardText>{dish.description}</CardText>
                         </CardBody>
                     </Card>
@@ -54,14 +54,13 @@ import { Link } from 'react-router-dom';
         }
     }
 
-    const DishDetail=(props)=>{
+    const DishDetail=(props)=>{//meka Dishdetail component eka function eka tamai export karanne meke atule tamai anith function call wenne 
         const dish=props.dish;
         if(dish!=null){
             return (
                 <div className="container">
                 <div className="row">
                     <Breadcrumb>
-
                         <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
                         <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
                     </Breadcrumb>
@@ -72,7 +71,8 @@ import { Link } from 'react-router-dom';
                 </div>
                 <div className="Container">
                     <div className="row">
-                        <RenderDish dish={props.dish} />
+                        <RenderDish dish={props.dish} /*React variables liynkota curly braces danwa (javascript expression ekak kiyala pennanna,or react variable ekak or property ekak)
+                        The inner braces are used because the style variable accepts an object. You put curly braces when you want to use the value of a variable inside "html" (so inside the render part). It's just a way of telling the app to take the value of the variable and put it there, as opposed to a word*//>
                         <RenderComments comments={props.comments} />
                     </div>
                     
