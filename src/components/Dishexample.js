@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, CardImg, CardText, CardTitle, CardBody, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Label, Row,Form,FormGroup} from 'reactstrap';
+import {Card, CardImg, CardText, CardTitle, CardBody, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Label, Row} from 'reactstrap';
 import {Link} from 'react-router-dom';
 import { Control, LocalForm, Errors} from 'react-redux-form';
 
@@ -11,27 +11,21 @@ class CommentForm extends Component{
     constructor(props){
         super(props);
         this.state = {
-
             isModalOpen: false
         };
-
-        this.toggleModal=this.toggleModal.bind(this);
-        
+        this.toggleModal = this.toggleModal.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-
-    toggleModal(){
+    toggleModal() {
         this.setState({
-            isModalOpen:!this.state.isModalOpen
+            isModalOpen: !this.state.isModalOpen
         });
     }
-
     handleSubmit(values){
         console.log('Current State is: '+ JSON.stringify(values));
         alert("Current State is: " + JSON.stringify(values));
         // event.preventDefault();
     }
-
-
     render(){
         return(
             <React.Fragment>
@@ -84,8 +78,8 @@ class CommentForm extends Component{
                     <span className="fa fa-pencil fa-lg"></span> Submit Comment
                 </Button>
             </React.Fragment> 
-        );}
-
+        );
+    }
 }
 
 function RenderComments({comments}){
@@ -98,7 +92,7 @@ function RenderComments({comments}){
                             return(
                                 <li key={comment.id}>
                                 <p>{comment.comment}</p>
-                           
+                            <p>-- {comment.author},&nbsp;{new Intl.DateTimeFormat('en-US',{year:'numeric',month:'short',day:'2-digit'}).format(new Date(Date.parse(comment.date)))}</p>
                                 </li>
                             );
                         })}
